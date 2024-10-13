@@ -32,7 +32,7 @@
 import { CORE_CONCEPTS } from "./data.js";
 import Header from "./components/Header/Header.js";
 import CoreConcept from "./components/CoreConcept.js";
-import TabButton  from "./components/TabButton.js";
+import TabButton from "./components/TabButton.js";
 // const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
 
 // function genRandomInt(max) {
@@ -61,6 +61,9 @@ import TabButton  from "./components/TabButton.js";
 //   );
 // }
 function App() {
+  function handelSelect() {
+    console.log("hello world");
+  }
   return (
     <div>
       <Header />
@@ -78,14 +81,12 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton>Components</TabButton>
-            <TabButton>JSX</TabButton>
-            <TabButton>Prpos</TabButton>
-            <TabButton>State</TabButton>
-            
+            <TabButton onSelect={handelSelect}>Components</TabButton>
+            <TabButton onSelect={handelSelect}>JSX</TabButton>
+            <TabButton onSelect={handelSelect}>Prpos</TabButton>
+            <TabButton onSelect={handelSelect}>State</TabButton>
           </menu>
         </section>
-        
       </main>
     </div>
   );
