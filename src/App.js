@@ -33,6 +33,7 @@ import { CORE_CONCEPTS } from "./data.js";
 import Header from "./components/Header/Header.js";
 import CoreConcept from "./components/CoreConcept.js";
 import TabButton from "./components/TabButton.js";
+
 // const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
 
 // function genRandomInt(max) {
@@ -61,8 +62,8 @@ import TabButton from "./components/TabButton.js";
 //   );
 // }
 function App() {
-  function handelSelect() {
-    console.log("hello world");
+  function handelSelect(selectedButton) {
+    console.log(selectedButton);
   }
   return (
     <div>
@@ -81,10 +82,12 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect={handelSelect}>Components</TabButton>
-            <TabButton onSelect={handelSelect}>JSX</TabButton>
-            <TabButton onSelect={handelSelect}>Prpos</TabButton>
-            <TabButton onSelect={handelSelect}>State</TabButton>
+            <TabButton click={() => handelSelect("components")}>
+              Components
+            </TabButton>
+            <TabButton click={() => handelSelect("jsx")}>JSX</TabButton>
+            <TabButton click={() => handelSelect("props")}>Prpos</TabButton>
+            <TabButton click={() => handelSelect("state")}>State</TabButton>
           </menu>
         </section>
       </main>
