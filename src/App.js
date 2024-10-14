@@ -33,6 +33,7 @@ import { CORE_CONCEPTS } from "./data.js";
 import Header from "./components/Header/Header.js";
 import CoreConcept from "./components/CoreConcept.js";
 import TabButton from "./components/TabButton.js";
+import MyComponent from "./myComponent.js";
 
 // const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
 
@@ -90,6 +91,7 @@ function App() {
             <TabButton click={() => handelSelect("state")}>State</TabButton>
           </menu>
         </section>
+        <MyComponent/>
       </main>
     </div>
   );
