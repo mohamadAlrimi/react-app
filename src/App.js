@@ -33,6 +33,7 @@ import { CORE_CONCEPTS } from "./data.js";
 import Header from "./components/Header/Header.js";
 import CoreConcept from "./components/CoreConcept.js";
 import TabButton from "./components/TabButton.js";
+import {EXAMPLES}from "./data.js"
 // import MyComponent from "./myComponent.js";
 
 // const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
@@ -63,7 +64,7 @@ import TabButton from "./components/TabButton.js";
 //   );
 // }
 function App() {
-  const [selectedTopic, setSelectedTopic] = useState("Please click a button");
+  const [selectedTopic, setSelectedTopic] = useState("components");
   function handelSelect(selectedButton) {
     setSelectedTopic(selectedButton);
     console.log(selectedTopic);
@@ -92,7 +93,13 @@ function App() {
             <TabButton click={() => handelSelect("props")}>Prpos</TabButton>
             <TabButton click={() => handelSelect("state")}>State</TabButton>
           </menu>
-          {selectedTopic}
+          <div id="tab-content">
+            <h3>{EXAMPLES[selectedTopic].title}</h3>
+            <p>{EXAMPLES[selectedTopic].description}</p>
+            <pre>
+              <code>{EXAMPLES[selectedTopic].code}</code>
+            </pre>
+          </div>
         </section>
         {/* <MyComponent/> */}
       </main>
