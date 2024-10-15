@@ -28,12 +28,12 @@
 // Important:
 // For this project to work on CodeSandbox, image assets ("assets") folder
 // must be stored in the public folder (as it's the case by default in this project)
-
+import { useState } from "react";
 import { CORE_CONCEPTS } from "./data.js";
 import Header from "./components/Header/Header.js";
 import CoreConcept from "./components/CoreConcept.js";
 import TabButton from "./components/TabButton.js";
-import MyComponent from "./myComponent.js";
+// import MyComponent from "./myComponent.js";
 
 // const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
 
@@ -63,8 +63,10 @@ import MyComponent from "./myComponent.js";
 //   );
 // }
 function App() {
+  const [selectedTopic, setSelectedTopic] = useState("Please click a button");
   function handelSelect(selectedButton) {
-    console.log(selectedButton);
+    setSelectedTopic(selectedButton);
+    console.log(selectedTopic);
   }
   return (
     <div>
@@ -90,8 +92,9 @@ function App() {
             <TabButton click={() => handelSelect("props")}>Prpos</TabButton>
             <TabButton click={() => handelSelect("state")}>State</TabButton>
           </menu>
+          {selectedTopic}
         </section>
-        <MyComponent/>
+        {/* <MyComponent/> */}
       </main>
     </div>
   );
