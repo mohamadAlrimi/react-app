@@ -28,12 +28,14 @@
 // Important:
 // For this project to work on CodeSandbox, image assets ("assets") folder
 // must be stored in the public folder (as it's the case by default in this project)
-import { useState } from "react";
-import { CORE_CONCEPTS } from "./data.js";
+// import { useState } from "react";
+// import { CORE_CONCEPTS } from "./data.js";
 import Header from "./components/Header/Header.js";
-import CoreConcept from "./components/CoreConcept.js";
-import TabButton from "./components/TabButton.js";
-import { EXAMPLES } from "./data.js";
+import Examples from "./components/Examples.js";
+// import CoreConcept from "./components/CoreConcept.js";
+import CoreConcepts from "./components/CoreConcepts.js";
+// import TabButton from "./components/TabButton.js";
+// import { EXAMPLES } from "./data.js";
 // import MyComponent from "./myComponent.js";
 
 // const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
@@ -64,29 +66,19 @@ import { EXAMPLES } from "./data.js";
 //   );
 // }
 function App() {
-  const [selectedTopic, setSelectedTopic] = useState();
-  function handelSelect(selectedButton) {
-    setSelectedTopic(selectedButton);
-    console.log(selectedTopic);
-  }
+  // const [selectedTopic, setSelectedTopic] = useState();
+  // function handelSelect(selectedButton) {
+  //   setSelectedTopic(selectedButton);
+  //   console.log(selectedTopic);
+  // }
   return (
     <>
       <Header />
 
       <main>
-        <section id="core-concepts">
-          <h2>Core concepts</h2>
-          <ul>
-            {CORE_CONCEPTS.map((conceptItem) => (
-              <CoreConcept key={conceptItem.title} {...conceptItem} />
-            ))}
-            {/* <CoreConcept {...CORE_CONCEPTS[0]} />
-            <CoreConcept {...CORE_CONCEPTS[1]} />
-            <CoreConcept {...CORE_CONCEPTS[2]} />
-            <CoreConcept {...CORE_CONCEPTS[3]} /> */}
-          </ul>
-        </section>
-        <section id="examples">
+        <CoreConcepts/>
+        <Examples/>
+        {/* <section id="examples">
           <h2>Examples</h2>
           <menu>
             <TabButton
@@ -125,7 +117,7 @@ function App() {
               </pre>
             </div>
           )}
-        </section>
+        </section> */}
         {/* <MyComponent/> */}
       </main>
     </>
