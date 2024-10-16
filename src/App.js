@@ -70,7 +70,7 @@ function App() {
     console.log(selectedTopic);
   }
   return (
-    <div>
+    <>
       <Header />
 
       <main>
@@ -128,7 +128,7 @@ function App() {
         </section>
         {/* <MyComponent/> */}
       </main>
-    </div>
+    </>
   );
 }
 
